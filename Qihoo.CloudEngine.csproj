@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <Title>Qihoo.CloudEngine</Title>
+    <Company>Qihoo360</Company>
+    <Authors>Nayuta-Team</Authors>
+    <PackageTags>360;Qihoo;Cloud;Security;Scan;MD5;Health;Virus;Check;Engine</PackageTags>
+    <IncludeSymbols>True</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <Copyright>Qihoo360</Copyright>
+    <Description>基于Qihoo360 Zip文件健康状态检查API封装, 用于通过MD5检查文件是否包含已被识别的威胁</Description>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>Nayuta_128px.png</PackageIcon>
+    <PackageReleaseNotes>Qihoo 360 File health check cloud engine</PackageReleaseNotes>
+    <RepositoryUrl>https://github.com/nayuta-team/Qihoo.CloudEngine</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/nayuta-team/Qihoo.CloudEngine</PackageProjectUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Nayuta_128px.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Nayuta_128px.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
