@@ -23,7 +23,7 @@ namespace Qihoo.CloudEngine
         {
             try
             {
-                using var client = new HttpClient(Handler);
+                using var client = new HttpClient(Handler, false);
                 using var response = await client.PostAsync(QihooCloudEngineUrl, GetContent(md5String));
                 response.EnsureSuccessStatusCode();
                 var content = await response.Content.ReadAsStringAsync();
