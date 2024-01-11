@@ -35,31 +35,25 @@ public static async Task Main()
 ```
 
 ```VisualBasic.NET
-Public Shared Async Function Main() As Task
-    Dim text As String? = "f351e1fcca0c4ea05fc44d15a17f8b36"
-    Dim result As FileHealthResult? = Await FileHealth.CheckAsync(text)
-    If TypeOf result Is [not] Then Nothing
-
-    If True Then
-
-        If result.IsOperationSuccess Then
-            Console.WriteLine("Malware Type : {0}", result?.MalwareType)
-            Console.WriteLine("File Pop (0-10) : {0}", result?.Pop)
-            Console.WriteLine("The length of time the file was found (day) : {0}", result?.Age)
-            Console.WriteLine("Probability (0-100) : {0}", result?.Level)
-            Console.WriteLine("Detected threats : {0}", result?.IsVerifiedMalware)
-            Console.WriteLine("The file has been uploaded : {0}", result?.HasUpload)
+Public Sub Main()
+        Dim text As String = "f351e1fcca0c4ea05fc44d15a17f8b36"
+        Dim result As FileHealthResult = FileHealth.CheckAsync(text).Result
+        If result IsNot Nothing Then
+            If result.IsOperationSuccess Then
+                Console.WriteLine("Malware Type : {0}", result?.MalwareType)
+                Console.WriteLine("File Pop (0-10) : {0}", result?.Pop)
+                Console.WriteLine("The length of time the file was found (day) : {0}", result?.Age)
+                Console.WriteLine("Probability (0-100) : {0}", result?.Level)
+                Console.WriteLine("Detected threats : {0}", result?.IsVerifiedMalware)
+                Console.WriteLine("The file has been uploaded : {0}", result?.HasUpload)
+            Else
+                Console.WriteLine("It didn't work out")
+            End If
         Else
-            Console.WriteLine("It didn't work out")
+            Console.WriteLine("No Result")
         End If
-    End If
-
-    If True Then
-        Console.WriteLine("No Result")
-    End If
-
-    Console.ReadKey()
-End Function
+        Console.ReadKey()
+    End Sub
 ```
 
 ### 示例输出:
